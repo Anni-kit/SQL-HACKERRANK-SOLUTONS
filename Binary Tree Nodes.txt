@@ -2,11 +2,11 @@ SELECT B.N,
 CASE
     WHEN B.P IS NOT NULL THEN
     CASE
-     WHEN (SELECT COUNT(*) FROM BST WHERE P=B.N)=0
-     THEN 'Leaf'
-    ELSE
-        'Inner'
-END
+        WHEN (SELECT COUNT(*) FROM BST WHERE P=B.N)=0
+            THEN 'Leaf'
+        ELSE
+            'Inner'
+    END
     ELSE
         'Root'
 END
